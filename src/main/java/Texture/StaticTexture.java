@@ -20,7 +20,7 @@ public class StaticTexture {
                     new FileInputStream("dvd.png"));
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("Tried to load texture  .png , didn't work");
+            System.err.println("The picture is not in this directory");
             System.exit(-1);
         }
         textureId=t.getTextureID();
