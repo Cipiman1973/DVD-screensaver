@@ -105,7 +105,7 @@ public class Main {
         {
 
             if (GLFW.glfwGetKey(window, GLFW.GLFW_KEY_ESCAPE) == GLFW.GLFW_PRESS)
-                GLFW.glfwSetWindowShouldClose(window, true); // Send a shutdown signal...
+                GLFW.glfwSetWindowShouldClose(window, true); 
 
 
             GL33.glClearColor(0f, 0f, 0f, 1f);
