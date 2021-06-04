@@ -77,4 +77,35 @@ public class Shader {
 
 
     }
+    public void setMatrix() {
+	
+    FloatBuffer matrixBuffer = BufferUtils.createFloatBuffer(16);
+    Move();
+    Vector3f vector = new Vector3f(x,y,0.0f);
+   
+    Matrix4f m=new Matrix4f().translate(vector);
+    m.store(matrixBuffer);
+    
+	matrixBuffer.flip();
+	GL20.glUniformMatrix4fv(GL33.glGetUniformLocation(shaderProgramId, "transformationMatrix"), false, matrixBuffer);
+   
+}
+
+public void Move() {
+	
+	if(y>0.5f) {
+		direcciony=-0.0001f;
+	}
+	if(y<-0.5f) {
+		direcciony=0.0001f;
+	}
+	if(x>0.5f) {
+		direccionx=-0.0001f;
+	}
+	if(x<-0.5f) {
+		direccionx=0.0001f;
+	}
+	y+=direcciony;
+	x+=direccionx;
+ }
 }
